@@ -371,7 +371,7 @@ Partial Class POS
         dgvCart.Name = "dgvCart"
         dgvCart.ReadOnly = True
         dgvCart.RowHeadersWidth = 62
-        dgvCart.Size = New Size(1234, 678)
+        dgvCart.Size = New Size(1234, 686)
         dgvCart.TabIndex = 0
         ' 
         ' Label1

@@ -41,10 +41,7 @@ Public Class TodaySales
                 connection.Open()
                 Using command As New SqlCommand(query, connection)
                     Using reader As SqlDataReader = command.ExecuteReader()
-                        While reader.Read()
-                            ' Add each user's full name to the ComboBox
-                            cmbCancelledby.Items.Add(reader("FullName").ToString())
-                        End While
+
                     End Using
                 End Using
             Catch ex As Exception
@@ -73,7 +70,19 @@ Public Class TodaySales
     End Sub
 
     ' Button click event to open the UserCancel form and pass parameters
+    ' Button click event to open the UserCancel form and pass parameters
+    ' Button click event to open the UserCancel form and pass parameters
     Private Sub btnCancelOrder_Click(sender As Object, e As EventArgs) Handles btnCancelOrder.Click
+
+        Try
+            MessageBox.Show("Current SessionData:" & vbCrLf &
+                      "UserID: " & SessionData.CurrentUserId & vbCrLf &
+                      "FullName: " & If(String.IsNullOrEmpty(SessionData.fullName), "EMPTY", SessionData.fullName) & vbCrLf &
+                      "Role: " & If(String.IsNullOrEmpty(SessionData.role), "EMPTY", SessionData.role),
+                      "Debug SessionData", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Catch ex As Exception
+            MessageBox.Show("Error accessing SessionData: " & ex.Message, "Debug Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
         ' Get the selected transaction number and product ID
         Dim transactionNumber As String = txtTransactionNumber.Text
         Dim productID As Integer
@@ -123,21 +132,27 @@ Public Class TodaySales
         End If
         Dim addToInventory As Boolean = (cmbAddToInventory.SelectedItem.ToString() = "Yes")
 
-        ' Get the selected user from cmbCancelledBy ComboBox
-        If cmbCancelledby.SelectedItem Is Nothing Then
-            MessageBox.Show("Please select the user who is cancelling.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return
-        End If
-        Dim cancelledBy As String = cmbCancelledby.SelectedItem.ToString()
+        ' Use the current user's name from SessionData
+        Dim cancelledBy As String = SessionData.fullName
+
+        ' Display the current user in the txtVoidby TextBox for visual confirmation
+        txtVoidby.Text = cancelledBy
 
         ' Create an instance of the UserCancel form and pass the parameters
         Dim cancelForm As New UserCancel(transactionNumber, productID, cancelQuantity, reasons, addToInventory, cancelledBy)
         cancelForm.ShowDialog()  ' Show the form and wait for the user to perform the cancellation
+
+        ' Refresh the data grid after cancellation
+        dgvTodaysSales.DataSource = LoadTodaySales()
     End Sub
 
 
     ' Event that triggers when the form is loaded
     Private Sub TodaySales_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        txtVoidby.Text = SessionData.fullName
+        cmbCancelledby.Text = SessionData.fullName
+
         ' Load TodaySales data
         Dim dt As DataTable = LoadTodaySales()
         dgvTodaysSales.DataSource = dt

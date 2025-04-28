@@ -106,6 +106,7 @@ Partial Class Main
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         PanelTotalProduct.SuspendLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
+        PanelUser.SuspendLayout()
         ContextMenuStripMaintenance.SuspendLayout()
         ContextMenuStripReports.SuspendLayout()
         ContextMenuStripSettings.SuspendLayout()
@@ -170,7 +171,7 @@ Partial Class Main
         ' 
         lblWelcome.AutoSize = True
         lblWelcome.BackColor = Color.White
-        lblWelcome.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
+        lblWelcome.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold)
         lblWelcome.Location = New Point(112, 977)
         lblWelcome.Name = "lblWelcome"
         lblWelcome.Size = New Size(88, 32)
@@ -181,7 +182,7 @@ Partial Class Main
         ' 
         lblTotalProduct.AutoSize = True
         lblTotalProduct.BackColor = Color.Transparent
-        lblTotalProduct.Font = New Font("Segoe UI Black", 10F, FontStyle.Bold)
+        lblTotalProduct.Font = New Font("Segoe UI Black", 10.0F, FontStyle.Bold)
         lblTotalProduct.ForeColor = SystemColors.ButtonHighlight
         lblTotalProduct.Location = New Point(129, 37)
         lblTotalProduct.Name = "lblTotalProduct"
@@ -214,7 +215,7 @@ Partial Class Main
         ' 
         Label7.AutoSize = True
         Label7.BackColor = Color.Transparent
-        Label7.Font = New Font("Segoe UI Black", 16F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label7.Font = New Font("Segoe UI Black", 16.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label7.Location = New Point(121, 20)
         Label7.Name = "Label7"
         Label7.Size = New Size(566, 45)
@@ -225,8 +226,8 @@ Partial Class Main
         ' 
         lblDateTime.AutoSize = True
         lblDateTime.BackColor = Color.White
-        lblDateTime.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
-        lblDateTime.Location = New Point(517, 977)
+        lblDateTime.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold)
+        lblDateTime.Location = New Point(543, 10)
         lblDateTime.Name = "lblDateTime"
         lblDateTime.Size = New Size(88, 32)
         lblDateTime.TabIndex = 6
@@ -235,9 +236,7 @@ Partial Class Main
         ' ButtonPanel
         ' 
         ButtonPanel.BackColor = Color.Gainsboro
-        ButtonPanel.Controls.Add(PictureBox7)
         ButtonPanel.Controls.Add(PictureBox6)
-        ButtonPanel.Controls.Add(lblDateTime)
         ButtonPanel.Controls.Add(Panel5)
         ButtonPanel.Controls.Add(lblWelcome)
         ButtonPanel.Controls.Add(UserPanel)
@@ -251,7 +250,7 @@ Partial Class Main
         ' 
         PictureBox7.BackColor = Color.White
         PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), Image)
-        PictureBox7.Location = New Point(461, 969)
+        PictureBox7.Location = New Point(487, 3)
         PictureBox7.Name = "PictureBox7"
         PictureBox7.Size = New Size(50, 50)
         PictureBox7.SizeMode = PictureBoxSizeMode.AutoSize
@@ -313,7 +312,7 @@ Partial Class Main
         ' 
         Label6.AutoSize = True
         Label6.BackColor = Color.Transparent
-        Label6.Font = New Font("Segoe UI Black", 10F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label6.Font = New Font("Segoe UI Black", 10.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label6.ForeColor = SystemColors.ButtonHighlight
         Label6.Location = New Point(127, 65)
         Label6.Name = "Label6"
@@ -336,7 +335,7 @@ Partial Class Main
         ' 
         lblCriticalItems.AutoSize = True
         lblCriticalItems.BackColor = Color.Transparent
-        lblCriticalItems.Font = New Font("Segoe UI Black", 10F, FontStyle.Bold)
+        lblCriticalItems.Font = New Font("Segoe UI Black", 10.0F, FontStyle.Bold)
         lblCriticalItems.ForeColor = SystemColors.ControlLightLight
         lblCriticalItems.Location = New Point(127, 37)
         lblCriticalItems.Name = "lblCriticalItems"
@@ -359,7 +358,7 @@ Partial Class Main
         ' 
         Label5.AutoSize = True
         Label5.BackColor = Color.Transparent
-        Label5.Font = New Font("Segoe UI Black", 10F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label5.Font = New Font("Segoe UI Black", 10.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label5.ForeColor = SystemColors.ButtonHighlight
         Label5.Location = New Point(127, 65)
         Label5.Name = "Label5"
@@ -382,7 +381,7 @@ Partial Class Main
         ' 
         lblQuantityStock.AutoSize = True
         lblQuantityStock.BackColor = Color.Transparent
-        lblQuantityStock.Font = New Font("Segoe UI Black", 10F, FontStyle.Bold)
+        lblQuantityStock.Font = New Font("Segoe UI Black", 10.0F, FontStyle.Bold)
         lblQuantityStock.ForeColor = SystemColors.ControlLightLight
         lblQuantityStock.Location = New Point(127, 37)
         lblQuantityStock.Name = "lblQuantityStock"
@@ -405,7 +404,7 @@ Partial Class Main
         ' 
         Label4.AutoSize = True
         Label4.BackColor = Color.Transparent
-        Label4.Font = New Font("Segoe UI Black", 10F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label4.Font = New Font("Segoe UI Black", 10.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label4.ForeColor = SystemColors.ButtonHighlight
         Label4.Location = New Point(124, 65)
         Label4.Name = "Label4"
@@ -428,7 +427,7 @@ Partial Class Main
         ' 
         lblTotalSales.AutoSize = True
         lblTotalSales.BackColor = Color.Transparent
-        lblTotalSales.Font = New Font("Segoe UI Black", 10F, FontStyle.Bold)
+        lblTotalSales.Font = New Font("Segoe UI Black", 10.0F, FontStyle.Bold)
         lblTotalSales.ForeColor = SystemColors.ButtonHighlight
         lblTotalSales.Location = New Point(124, 37)
         lblTotalSales.Name = "lblTotalSales"
@@ -452,7 +451,7 @@ Partial Class Main
         ' 
         Label3.AutoSize = True
         Label3.BackColor = Color.Transparent
-        Label3.Font = New Font("Segoe UI Black", 10F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label3.Font = New Font("Segoe UI Black", 10.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label3.ForeColor = SystemColors.ButtonHighlight
         Label3.Location = New Point(126, 65)
         Label3.Name = "Label3"
@@ -464,7 +463,7 @@ Partial Class Main
         ' 
         Label2.AutoSize = True
         Label2.BackColor = Color.Transparent
-        Label2.Font = New Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label2.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label2.Location = New Point(126, 65)
         Label2.Name = "Label2"
         Label2.Size = New Size(0, 28)
@@ -484,6 +483,8 @@ Partial Class Main
         ' PanelUser
         ' 
         PanelUser.BackColor = Color.Transparent
+        PanelUser.Controls.Add(PictureBox7)
+        PanelUser.Controls.Add(lblDateTime)
         PanelUser.Location = New Point(29, 967)
         PanelUser.Name = "PanelUser"
         PanelUser.Size = New Size(1749, 59)
@@ -654,7 +655,7 @@ Partial Class Main
         ' 
         ' Main
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(10.0F, 25.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         ClientSize = New Size(1924, 1050)
@@ -694,6 +695,8 @@ Partial Class Main
         PanelTotalProduct.ResumeLayout(False)
         PanelTotalProduct.PerformLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
+        PanelUser.ResumeLayout(False)
+        PanelUser.PerformLayout()
         ContextMenuStripMaintenance.ResumeLayout(False)
         ContextMenuStripReports.ResumeLayout(False)
         ContextMenuStripSettings.ResumeLayout(False)

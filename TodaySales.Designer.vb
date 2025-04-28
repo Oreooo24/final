@@ -44,12 +44,12 @@ Partial Class TodaySales
         lblDiscount = New Label()
         btnCancelOrder = New Button()
         txtProductID = New TextBox()
-        cmbCancelledby = New ComboBox()
         txtVoidby = New TextBox()
         Label1 = New Label()
         Label2 = New Label()
         Panel1 = New Panel()
         btnCLose = New Button()
+        cmbCancelledby = New TextBox()
         CType(dgvTodaysSales, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
         SuspendLayout()
@@ -247,15 +247,6 @@ Partial Class TodaySales
         txtProductID.TabIndex = 14
         txtProductID.Visible = False
         ' 
-        ' cmbCancelledby
-        ' 
-        cmbCancelledby.DropDownStyle = ComboBoxStyle.DropDownList
-        cmbCancelledby.Font = New Font("Segoe UI Semibold", 10F, FontStyle.Bold)
-        cmbCancelledby.Location = New Point(773, 125)
-        cmbCancelledby.Name = "cmbCancelledby"
-        cmbCancelledby.Size = New Size(368, 36)
-        cmbCancelledby.TabIndex = 19
-        ' 
         ' txtVoidby
         ' 
         txtVoidby.Font = New Font("Segoe UI Semibold", 10F, FontStyle.Bold)
@@ -306,17 +297,24 @@ Partial Class TodaySales
         btnCLose.TabIndex = 68
         btnCLose.UseVisualStyleBackColor = False
         ' 
+        ' cmbCancelledby
+        ' 
+        cmbCancelledby.Location = New Point(773, 130)
+        cmbCancelledby.Name = "cmbCancelledby"
+        cmbCancelledby.Size = New Size(368, 31)
+        cmbCancelledby.TabIndex = 25
+        ' 
         ' TodaySales
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.Gainsboro
         ClientSize = New Size(1445, 644)
+        Controls.Add(cmbCancelledby)
         Controls.Add(Panel1)
         Controls.Add(Label2)
         Controls.Add(Label1)
         Controls.Add(txtVoidby)
-        Controls.Add(cmbCancelledby)
         Controls.Add(txtProductID)
         Controls.Add(btnCancelOrder)
         Controls.Add(txtReasons)
@@ -371,11 +369,11 @@ Partial Class TodaySales
     Friend WithEvents lblDiscount As Label
     Friend WithEvents btnCancelOrder As Button
     Friend WithEvents txtProductID As TextBox
-    Friend WithEvents cmbCancelledby As ComboBox
     Friend WithEvents txtVoidby As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnCLose As Button
+    Friend WithEvents cmbCancelledby As TextBox
 
 End Class
